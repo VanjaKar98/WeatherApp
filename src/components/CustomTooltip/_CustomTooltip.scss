@@ -1,0 +1,22 @@
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/variables" as *;
+
+.custom-tooltip {
+  padding: 0.5rem 0.9rem;
+  background: $color-bg-primary;
+  border: 1px solid $color-border-accent;
+  border-radius: 0.5rem;
+  @include flex-column($align: flex-start);
+
+  &__time {
+    font-size: 0.75rem;
+    color: $color-primary;
+    margin-bottom: 0.25rem;
+  }
+
+  &__value {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: $color-text-primary;
+  }
+}

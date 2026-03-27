@@ -1,0 +1,16 @@
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/variables" as *;
+
+.main {
+  width: 100%;
+  max-width: 1000px;
+  flex: 1;
+  @include flex-column;
+
+  &__inner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}

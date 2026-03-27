@@ -1,0 +1,37 @@
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/variables" as *;
+
+.form {
+  @include flex-row($justify: center);
+
+  &__input {
+    padding: 0.6rem;
+    color: $color-text-primary;
+    background: $color-bg-surface;
+    border: 1px solid $color-border;
+    border-radius: 0.8rem;
+    font-size: 0.9rem;
+    font-family: $font-body;
+    width: 220px;
+    transition: border 1s ease-in-out;
+
+    &::placeholder {
+      color: $color-text-faint;
+    }
+
+    &:focus {
+      border-color: $color-border-focus;
+    }
+  }
+}
+
+@media (max-width: 650px) {
+  .form {
+    width: 100%;
+
+    &__input {
+      width: 100%;
+      border-radius: 1.2rem;
+    }
+  }
+}

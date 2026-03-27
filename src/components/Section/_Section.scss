@@ -1,0 +1,29 @@
+@use "../../styles/abstracts/mixins" as *;
+
+.section {
+  @include flex-row($justify: center);
+
+  &__local {
+    grid-column: span 2;
+  }
+
+  &__week {
+    grid-column: span 1;
+  }
+
+  &__charts {
+    grid-column: span 3;
+  }
+}
+
+@media (max-width: 530px) {
+  .section {
+    &__local {
+      grid-column: span 3;
+    }
+
+    &__week {
+      grid-column: span 3;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/variables" as *;
+
+.forecastday {
+  width: 100%;
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: 2rem 1fr 4rem;
+  justify-items: center;
+  align-items: center;
+
+  &:not(:last-of-type) {
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__day {
+    margin-right: auto;
+    font-size: 0.8rem;
+    color: $color-text-secondary;
+  }
+
+  &__weather {
+    font-size: 1rem;
+    margin-left: 10%;
+  }
+
+  &__temp {
+    margin-left: auto;
+    @include flex-row($justify: flex-end, $align: center);
+    gap: 0.7rem;
+  }
+
+  &__high {
+    color: $color-text-primary;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  &__low {
+    color: $color-text-faint;
+    font-size: 0.9rem;
+  }
+}

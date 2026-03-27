@@ -1,0 +1,67 @@
+@use "../../styles/abstracts/mixins" as *;
+@use "../../styles/abstracts/variables" as *;
+
+.chart-container {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  background: $color-bg-surface;
+  border: 1px solid $color-border;
+  border-radius: 1.2rem;
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+  @include flex-column($align: flex-start);
+  gap: 0.6rem;
+
+  &:hover {
+    background: $color-bg-surface-hover;
+    border-color: $color-border-accent;
+    transition: all 500ms ease-in-out;
+  }
+
+  &__header {
+    width: 100%;
+    @include flex-row($justify: space-between);
+  }
+
+  &__title {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: $color-text-muted;
+    text-transform: uppercase;
+  }
+
+  &__tabs {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 0.25rem;
+    border-radius: 1.5rem;
+    @include flex-row($justify: space-between);
+    gap: 0.5rem;
+  }
+
+  &__chart {
+    width: 100%;
+  }
+}
+
+@media (max-width: 650px) {
+  .chart-container {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: $size-mobile) {
+  .chart-container {
+    gap: 1.5rem;
+
+    &__header {
+      @include flex-column($align: flex-start);
+      gap: 0.5rem;
+    }
+
+    &__tabs {
+      width: 100%;
+    }
+  }
+}
