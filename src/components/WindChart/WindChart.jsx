@@ -36,6 +36,7 @@ export default function WindChart({ data, isMobile, unitX, unitY }) {
         <Tooltip
           content={<CustomTooltip unitX={unitX} unitY={unitY} />}
           cursor={{ stroke: "#68d391", strokeWidth: 0.5 }}
+          offset={40}
         />
         <Area
           type="monotone"

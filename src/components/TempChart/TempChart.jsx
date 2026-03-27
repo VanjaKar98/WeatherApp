@@ -41,6 +41,7 @@ export default function TempChart({ data, isMobile, unitX, unitY }) {
         <Tooltip
           content={<CustomTooltip unitX={unitX} unitY={unitY} />}
           cursor={{ stroke: "#63b3ed", strokeWidth: 0.5 }}
+          offset={40}
         />
         <Area
           type="monotone"

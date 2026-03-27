@@ -10,13 +10,13 @@ import ErrorPopup from "./components/ErrorPopup/ErrorPopup";
 
 function App() {
   const [city, setCity] = useState("varazdin");
-  const { coordinates, weather, visiblePopup } = useWeather(city);
+  const { coordinates, weather, popupVisible } = useWeather(city);
 
   return (
     <>
       <Header setCity={setCity} />
       <Main city={city} coordinates={coordinates} weather={weather} />
-      {visiblePopup && <ErrorPopup />}
+      {popupVisible && <ErrorPopup />}
     </>
   );
 }

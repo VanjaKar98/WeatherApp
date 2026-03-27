@@ -5,14 +5,14 @@ import { fetchCityCoordinates, fetchWeather } from "../api/weather";
 export function useWeather(city) {
   const [coordinates, setCoordinates] = useState(null);
   const [weather, setWeather] = useState(null);
-  const [visiblePopup, setvisiblePopup] = useState(false);
+  const [popupVisible, setPopupVisible] = useState(false);
 
   useEffect(() => {
     async function getData() {
       try {
         let coordinates = await fetchCityCoordinates(city);
         if (!coordinates.results?.length) {
-          setvisiblePopup(true);
+          setPopupVisible(true);
           return;
         }
         setCoordinates(coordinates);
@@ -23,9 +23,9 @@ export function useWeather(city) {
       }
     }
     getData();
-    const timeout = setTimeout(() => setvisiblePopup(false), 1500);
+    const timeout = setTimeout(() => setPopupVisible(false), 1500);
     return () => clearTimeout(timeout);
   }, [city]);
 
-  return { coordinates, weather, visiblePopup };
+  return { coordinates, weather, popupVisible };
 }

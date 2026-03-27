@@ -31,6 +31,7 @@ export default function RainChart({ data, isMobile, unitX, unitY }) {
         <Tooltip
           content={<CustomTooltip unitX={unitX} unitY={unitY} />}
           cursor={{ fill: "rgba(99, 179, 237, 0.05)" }}
+          offset={40}
         />
         <Bar
           dataKey="rain"

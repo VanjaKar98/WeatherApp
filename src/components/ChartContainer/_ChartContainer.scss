@@ -43,6 +43,11 @@
   &__chart {
     width: 100%;
   }
+
+  svg:focus,
+  svg *:focus {
+    outline: none;
+  }
 }
 
 @media (max-width: 650px) {
