@@ -1,9 +1,9 @@
 import "./_ErrorPopup.scss";
 
-export default function ErrorPopup() {
+export default function ErrorPopup({ message }) {
   return (
     <div className="error">
-      <span>City not found</span>
+      <span>{message}</span>
     </div>
   );
 }
