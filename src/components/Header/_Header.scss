@@ -13,7 +13,7 @@
     @include flex-row($justify: space-between);
   }
 
-  &--title {
+  &__title {
     height: 100%;
     @include flex-column($align: flex-start);
   }
